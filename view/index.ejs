@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Home</title>
+</head>
+
+<body>
+    <center>
+        <div class="main">URL Shortner</div>
+        <form action="/short" method="post">
+            <input type="text" class="input" name="link" value="google.com">
+            <button class="btn">Generate</button>
+    </center>
+    </form>
+    <div>
+        <div class="all">
+            <div class="title">Links</div>
+            <%result.forEach(ite=>{%>
+                <div class="mini-box">
+                    <p>
+                        <%=ite.link%>
+                    </p>
+                    <p id="text">
+                        <%=ite.newLink%>
+                    </p>
+                    <div class="align">
+                        <div class="button">
+                            <button onclick="fun()">copy</button>
+                            <a href="/delete/<%=ite._id%>"><button>Delete</button></a>
+                        </div>
+                        <p id="status"></p>
+                    </div>
+
+                </div>
+                <%})%>
+        </div>
+    </div>
+
+</body>
+
+</html>

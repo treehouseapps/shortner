@@ -1,0 +1,72 @@
+body {
+    background-color: snow;
+    font-family: cursive;
+}
+
+.main {
+    font-size: xx-large;
+    font-weight: bolder;
+    margin: 3rem 1rem;
+}
+
+.input {
+    padding: .7rem;
+    border-radius: 1rem;
+    border: none;
+    font-size: medium;
+    font-weight: bolder;
+    box-shadow: 1px 2px 5px 2px grey;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.btn {
+    padding: .5rem;
+    font-weight: bolder;
+    border: none;
+    box-shadow: 1px 2px 5px 2px grey;
+}
+
+.all {
+    border: 1px solid lightblue;
+    display: grid;
+    place-items: center;
+    margin: 1rem;
+    width: 20rem;
+    grid-template-columns: 1fr;
+}
+
+.title {
+    font-size: x-large;
+}
+
+.mini-box {
+    margin: 1rem 0rem;
+    border-bottom: 1px solid black;
+    width: 18rem;
+}
+
+.mini-box p {
+    overflow: hidden;
+}
+
+.align {
+    display: inline-flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.button {
+    display: inline-flex;
+}
+
+.button button {
+    padding: .5rem;
+    margin: 0rem 0.5rem 0.5rem 0.5rem;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 1px 2px 5px 2px grey;
+
+}
