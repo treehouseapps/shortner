@@ -10,7 +10,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 
 app.get('/', (req, res) => {
-  try{ res.render('index');}
+  try{ res.render("index");}
    catch(er){res.send(er)}
 });
 
