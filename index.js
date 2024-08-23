@@ -12,6 +12,6 @@ const routes = require('./routes/routes')
 
 app.use('/', routes)
 
-app.listen(process.env.PORT, () => {
-    console.log('Server Running in port ' + process.env.PORT)
+app.listen(3000, () => {
+    console.log('Server Running in port ' + 3000)
 })
