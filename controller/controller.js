@@ -19,7 +19,7 @@ const shorten = async (req, res) => {
         }
         const newExist = await collection.findOne({ newLink: char })
         if (!newExist) {
-            const compress = 'http://localhost:3000/' + char
+            const compress = 'https://shortner-beta.vercel.app/' + char
             const generated = char
             await collection.insertMany({ link: orignalUrl, generated: generated, newLink: compress })
         }
