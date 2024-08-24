@@ -14,6 +14,28 @@ const home = async (req, res) => {
         console.log("i even render it")
     }
 }
+// Shorten and save to database
+const character = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+
+const shorten = async (req, res) => {
+    const orignalUrl = await 'https://' + req.body.link
+    const oldExist = await collection.findOne({ link: orignalUrl })
+    if (!oldExist) {
+        let char = "";
+        for (let i = 0; i < 5; i++) {
+            const random = await Math.floor(Math.random() * character.length)
+            char += character[random]
+        }
+        const newExist = await collection.findOne({ newLink: char })
+        if (!newExist) {
+            const compress = 'https://shortner-beta.vercel.app/' + char
+            const generated = char
+            await collection.insertMany({ link: orignalUrl, generated: generated, newLink: compress })
+        }
+    }
+    const result = await collection.find()
+    res.render('index', { result })
+}
 // Lead to The original Website
 const newpage = async (req, res) => {
     const searchId = req.params.newLink
@@ -38,27 +60,7 @@ module.exports = { home, newpage, remove };
 
 /*
 
-const character = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 
-const shorten = async (req, res) => {
-    const orignalUrl = await 'https://' + req.body.link
-    const oldExist = await collection.findOne({ link: orignalUrl })
-    if (!oldExist) {
-        let char = "";
-        for (let i = 0; i < 5; i++) {
-            const random = await Math.floor(Math.random() * character.length)
-            char += character[random]
-        }
-        const newExist = await collection.findOne({ newLink: char })
-        if (!newExist) {
-            const compress = 'https://shortner-beta.vercel.app/' + char
-            const generated = char
-            await collection.insertMany({ link: orignalUrl, generated: generated, newLink: compress })
-        }
-    }
-    const result = await collection.find()
-    res.render('index', { result })
-}
 
 module.exports = { home, shorten, newpage, remove }
 */
