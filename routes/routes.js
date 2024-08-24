@@ -7,5 +7,6 @@ app.post('/short', shorten)
 app.get('/', home)
 app.get('/:newLink', newpage)
 app.get('/delete/:id', remove)
+app.get('/*', home)
 
 module.exports = app
