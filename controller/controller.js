@@ -54,13 +54,4 @@ const remove = async (req, res) => {
     res.redirect('/')
 }
 
-module.exports = { home, newpage, remove };
-
-
-
-/*
-
-
-
-module.exports = { home, shorten, newpage, remove }
-*/
+module.exports = { home, shorten, newpage, remove };
