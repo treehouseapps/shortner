@@ -6,7 +6,6 @@ const collection = require('../model/model')
 const home = async (req, res) => {
     const result = await collection.find()
     res.render('index', { result })
-
 }
 // Shorten and save to database
 const character = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
