@@ -9,7 +9,7 @@ if (collection.length > 0) {
 const home = async (req, res) => {
     const result = await collection.find()
     if (result.length > 0) {
-        res.render('index', { result })
+        res.render('index', { title: result[0].link })
     }
     else { 
         console.log("i am in collection home")
