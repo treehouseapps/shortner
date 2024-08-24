@@ -8,7 +8,7 @@ if (collection.length > 0) {
 
 const home = async (req, res) => {
     const result = await collection.find()
-    if (result.length) {
+    if (result.length > 0) {
         res.render('index', { result })
     }
     else { 
