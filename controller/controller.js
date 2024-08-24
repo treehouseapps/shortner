@@ -5,14 +5,8 @@ const collection = require('../model/model')
 // Retrve and Display from Database
 const home = async (req, res) => {
     const result = await collection.find()
-    if (result.length > 0) {
-        res.render('index', { result })
-    }
-    else {
-        console.log("i am in collection home")
-        res.render('index', { title: " no data" })
-        console.log("i even render it")
-    }
+    res.render('index', { result })
+
 }
 // Shorten and save to database
 const character = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
