@@ -5,19 +5,20 @@ const collection = require('../model/model')
 if (collection.length > 0) {
     console.log("greater than 3")
 }
-if (collection.length < 1) {
-    console.log("greater less than 1")
-}
 
 const home = async (req, res) => {
     const result = await collection.find()
-    if (result.length) {
-        res.render('index', { result })
+    if (result.length > 0) {
+        res.render('index', { title: result[0].link })
     }
-    else { res.render('index', { title: " no data" }) }
+    else { 
+        console.log("i am in collection home")
+        res.render('index', { title: " no data" })
+    console.log("i even render it")}
 }
 
-module.exports = { home };
+module.exports = home ;
+console.log("this is home length "+home.length)
 
 
 
