@@ -10,6 +10,7 @@ const home = async (req, res) => {
 // Shorten and save to database 
 shortId.generate(5)
 console.log("shortId ===> "+shortId)
+console.log("heyyyyyyyyyyyyyyyyyyyyyy")
 const character = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 
 const shorten = async (req, res) => {
