@@ -8,8 +8,8 @@ const home = async (req, res) => {
     res.render('index', { result })
 }
 // Shorten and save to database 
-shortId.generate(5)
-console.log("shortId ===> "+shortId)
+let word = shortId.generate()
+console.log("shortId ===> "+word)
 console.log("heyyyyyyyyyyyyyyyyyyyyyy")
 const character = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 
