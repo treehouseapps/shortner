@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const shortId = require('shortid)
+const shortId = require('shortid')
 const collection = require('../model/model')
 // Retrve and Display from Database
 const home = async (req, res) => {
