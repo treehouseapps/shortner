@@ -6,7 +6,8 @@ const home = async (req, res) => {
     const result = await collection.find()
     res.render('index', { result })
 }
-// Shorten and save to database
+
+// Shorten and save to database 
 const shorten = async (req, res) => {
     const orignalUrl = await 'https://' + req.body.link
     try {
