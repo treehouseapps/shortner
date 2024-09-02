@@ -1,13 +1,15 @@
 const express = require('express')
 const app = express()
-
+const shortId = require('shortid)
 const collection = require('../model/model')
 // Retrve and Display from Database
 const home = async (req, res) => {
     const result = await collection.find()
     res.render('index', { result })
 }
-// Shorten and save to database
+// Shorten and save to database 
+shortId.generate(5)
+console.log(shortId)
 const character = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 
 const shorten = async (req, res) => {
