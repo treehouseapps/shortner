@@ -3,5 +3,8 @@ function fun() {
     console.log(text)
     navigator.clipboard.writeText(text).then(() => {
         document.getElementById('status').innerText = 'Text copied!'
+        setTimeout(() => {
+            document.getElementById('status').innerText = 'Copy'
+        }, 3000)
     })
 }

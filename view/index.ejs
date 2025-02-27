@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 
 <body>
@@ -18,7 +17,7 @@
         <div class="container">
             <div class="align-items">
                 <img src="icon.png" alt="" width="50">
-                <a class="navbar-brand" href="#">Ttrim</a>
+                <a class="navbar-brand" href="/">Ttrim</a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +25,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home Page</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Home Page</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Sign Up</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
                 </ul>
@@ -63,9 +62,11 @@
                                         <%=ite.link%>
                                     </a></p>
                                 <p>Shortened URL: <a href="<%=ite.newLink%>">
-                                        <%=ite.newLink%>
+                                        <p id="text">
+                                            <%=ite.newLink%>
+                                        </p>
                                     </a></p>
-                                <button class="btn btn-success btn-block mt-3" onclick="fun()">Copy</button>
+                                <button class="btn btn-success btn-block mt-3" id="status" onclick="fun()">Copy</button>
                                 <a href="/delete/<%=ite._id%>"><button
                                         class="btn btn-success btn-block mt-3">Delete</button></a>
                             </div>
@@ -79,6 +80,7 @@
     <footer>
         <p>&copy; 2025 Trehouseapps. All rights reserved.</p>
     </footer>
+    <script src="script.js"></script>
 
 </body>
 
