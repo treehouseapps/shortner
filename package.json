@@ -4,7 +4,8 @@
   "description": "a lot of things",
   "main": "index.js",
   "scripts": {
-    "test": "hello"
+    "test": "hello",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -16,12 +17,6 @@
   "author": "new",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.2",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "ejs": "^3.1.10",
-    "express": "^4.19.2",
-    "mongoose": "^8.5.3",
-    "shortid": "^2.2.16"
+    "express": "^4.18.2"
   }
 }
