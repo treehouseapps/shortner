@@ -21,3 +21,4 @@ connection(process.env.DBCONNECTION)
     .catch(() => { console.log('Error connection to database') })
 
 
+module.exports = app
