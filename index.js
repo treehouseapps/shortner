@@ -1,16 +1,23 @@
-const express = require('express');
-const app = express();
+const express = require('express')
+const app = express()
+require('dotenv').config()
+const path = require('path')
+const connection = require('./config/dbConfig')
+
+app.use(express.static(path.join(__dirname, '/public')))
+app.set('view engine', 'ejs')
+app.set('views', __dirname + '/view')
+app.use(express.urlencoded({ extended: true }))
+
 const routes = require('./routes/routes')
-const path = require('path');
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
-app.use(express.urlencoded({ extended: true }));
+app.use('/', routes)
+connection(process.env.DBCONNECTION)
+    .then(() => {
+        app.listen(process.env.PORT, () => {
+            console.log('Server Running in port ' + process.env.PORT)
+        })
+    })
+    .catch(() => { console.log('Error connection to database') })
 
 
-app.use("/", routes);
-
-app.listen(3000, () => {
-  console.log('Server running on port ' + 3000);
-});
