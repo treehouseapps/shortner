@@ -24,31 +24,6 @@ A simple and efficient URL shortener that converts long links into short, sharea
 
 ---
 
-## 📂 Project Structure
-
-```
-project/
-│
-├── public/             # Static assets (CSS, JS, Images)
-├── views/              # EJS templates
-│   ├── index.ejs
-│   ├── result.ejs
-│   └── error.ejs
-│
-├── models/
-│   └── Url.js          # URL schema and model
-│
-├── routes/
-│   └── shortener.js    # Routes for shortening and redirecting
-│
-├── index.js            # Main entry point
-├── .env                # Environment variables
-├── package.json
-└── README.md
-```
-
----
-
 ## ⚙️ Installation & Setup
 
 1. **Clone the repository**
